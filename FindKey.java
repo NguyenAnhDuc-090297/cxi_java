@@ -76,20 +76,21 @@ public class FindKey {
 	     
 	      CryptoServerCXI.KeyAttributes [] keyList = cxi.listKeys(attr);
 	      
-	      System.out.printf("\n%1$-6s %2$-8s %3$-5s %4$-24s %5$-32s %6$s\n", "algo", "type", "size", "group", "name", "modulus");
+	      System.out.printf("\n%1$-6s %2$-8s %3$-7s %4$-11s %5$-10s %6$-7s %7$-9s %8$s\n", "algo", "type", "size", "group", "name", "spec", "label", "modulus");
 	      System.out.println("-----------------------------------------------------------------------------------------");
 	      
 	      
 	      for (CryptoServerCXI.KeyAttributes att : keyList)
 	      {
 	    	  //System.out.printf("%f\n", att.getModulus());
-	        System.out.printf("%1$-6s %2$-8s %3$-5d %4$-24s %5$-32s %6$d\n", algoStrings[att.getAlgo()],
+	        System.out.printf("%1$-6s %2$-8s %3$-7d %4$-11s %5$-10s %6$-7s %7$-9s %8$s\n", algoStrings[att.getAlgo()],
 	                                                                         getTypeString(att.getType()),
 	                                                                         att.getSize(),
 	                                                                         att.getGroup(), 
 	                                                                         att.getName(),
-	                                                                         att.getModulus());
-	                                                                         //att.getLabel());                                                           
+	                                                                         att.getSpecifier(),
+	                                                                         att.getLabel(),
+	                                                                         att.getModulus());	                                                                                                                                   
 	      } 
 		
 		System.out.println("\nclosing connection");
