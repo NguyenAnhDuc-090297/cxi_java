@@ -1,3 +1,3 @@
 # cxi_java
 get key with label attribute
-use CryptoServerCXI lib to compile this sample
+add CryptoServerCXI lib to use CryptoServerCXI class
